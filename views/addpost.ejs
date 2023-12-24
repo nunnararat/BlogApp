@@ -8,21 +8,23 @@
 </head>
 <body>
       <%- include ('layout') %>
+      <br>
       <div class="container">
           <h2 class="my-4" align="center">เขียนบทความ</h2>
           <% if(locals.errors){ %>
-              <ul class="alert alert-danger" role="alert">
+              <ul class="alert alert-danger" role="alert" style="padding: 30px;">
                   <% Object.values(errors).forEach(function(error){ %>
                      <li><%= error.msg %></li>
                   <% }) %>
               </ul>
           <% } %>
-  
+            <br>
           <form action="/post/add" method="post">
             <div class="form-group">
                   <label for="">หัวข้อ</label>
                   <input type="text" name="title" value="" class="form-control">
             </div>
+            <br>
             <% if(locals.categories) { %>
             <div class="form-group">
                   <label for="">หมวดหมู่</label>
@@ -33,14 +35,17 @@
                   </select>
             </div>
             <% } %>
+            <br>
             <div class="form-group">
                   <label for="">เนื้อหา</label>
                   <textarea id="content" name="content" rows="8" cols="80"></textarea>
             </div>
+            <br>
             <div class="form-group">
                   <label for="">ภาพปก</label>
                   <input type="text" name="img" value="" class="form-control">
             </div>
+            <br>
             <div class="form-group">
                   <label for="">ผู้เขียน</label>
                   <input type="text" name="author" value="" class="form-control">

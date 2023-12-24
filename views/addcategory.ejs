@@ -10,7 +10,7 @@
     <div class="container">
         <h2 class="my-4" align="center">เพิ่มประเภทบทความ</h2>
         <% if(locals.errors){ %>
-            <ul class="alert alert-danger" role="alert">
+            <ul class="alert alert-danger" role="alert" style="padding: 30px;">
                 <% Object.values(errors).forEach(function(error){ %>
                    <li><%= error.msg %></li>
                 <% }) %>

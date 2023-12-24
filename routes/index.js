@@ -36,9 +36,9 @@ router.get('/show/:id', async function(req, res, next) {
 router.get('/posts/show/', async function(req, res, next) {
   var blogs = db.get('posts');
   var categories = db.get('categories');
-  var name = req.query.category;//ไปดึงค่าจาก query string category
-  var author = req.query.author;   
-  var title = req.query.title;   
+  var name=req.query.category;//ไปดึงค่าจาก query string category
+  var author=req.query.author;
+  var title=req.query.title;
   if(name){
     const blog = await blogs.find({category:name}, {});
     const category = await categories.find({}, {});
@@ -62,6 +62,7 @@ router.get('/posts/show/', async function(req, res, next) {
   if(title){
     const blog = await blogs.find({title:title}, {});
     const category = await categories.find({}, {});
+    console.log(category)
     res.render('show_search', {
       posts: blog,
       categories: category,
